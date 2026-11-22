@@ -147,8 +147,10 @@ export const STATIC = {
 ${partnerBlock('about')}
 <h2>Who builds and maintains SolarToolsHub</h2>
 <p>SolarToolsHub is developed and maintained by ${devLink}. For anything about the website itself – corrections, technical problems, advertising or partnerships – please contact the developer through ${ext(DEV.url, 'twocompo.com')}.</p>
-<h2>Our other free tools</h2>
-<p>This site is only about solar. For general finance calculators – EMI, SIP, FD, PPF, income tax and GST – use our sister site ${ext(NETWORK.akdet.all, 'akdet.com')}. Founders validating a product idea can try ${ext(NETWORK.mvpchecker.url, NETWORK.mvpchecker.name)}.</p>`,
+<h2>Technology partner</h2>
+<p>Our technology partner is ${ext(NETWORK.mvpchecker.url, NETWORK.mvpchecker.name)} (mvpchecker.com).</p>
+<h2>Other calculators</h2>
+<p>Need more calculators – EMI, SIP, FD, PPF, income tax, GST and many others? Visit ${ext(NETWORK.akdet.all, 'akdet.com')}.</p>`,
   },
   contact: {
     title: 'Contact Us – SolarToolsHub & Avirat Energy',
@@ -165,7 +167,7 @@ ${partnerBlock('contact')}
 <h2>Privacy requests</h2>
 <p>Our calculators do not collect personal data. If you still have a question or request about your data, see the <a href="/privacy-policy">Privacy Policy</a> and reach the developer through ${ext(DEV.url, 'twocompo.com')}.</p>
 <h2>Please note</h2>
-<ul><li>We are <strong>not a government office</strong> and cannot check, approve or speed up a subsidy application. For that, log in at ${ext('https://pmsuryaghar.gov.in', 'pmsuryaghar.gov.in', true)}, call the scheme helpline 15555 or contact your DISCOM.</li><li>We never ask for a registration fee, OTP or bank details.</li><li>For finance calculators that are not about solar, visit our sister site ${ext(NETWORK.akdet.all, 'akdet.com')}.</li></ul>`,
+<ul><li>We are <strong>not a government office</strong> and cannot check, approve or speed up a subsidy application. For that, log in at ${ext('https://pmsuryaghar.gov.in', 'pmsuryaghar.gov.in', true)}, call the scheme helpline 15555 or contact your DISCOM.</li><li>We never ask for a registration fee, OTP or bank details.</li><li>Need more calculators? Visit ${ext(NETWORK.akdet.all, 'akdet.com')}.</li></ul>`,
   },
   advertise: {
     title: 'Advertise With Us – Reach Solar Buyers in India',
@@ -205,7 +207,7 @@ ${partnerBlock('contact')}
 <h2>When you contact our installation partner</h2>
 <p>Buttons such as “Call”, “WhatsApp” and “Visit website” connect you directly to ${PARTNER.legalName}. Tapping them opens your phone dialler, WhatsApp or their website; SolarToolsHub does not receive your phone number or your message. Whatever you share with ${PARTNER.name} is handled under their own privacy policy. Links to their website carry a campaign tag that tells them the visit came from SolarToolsHub – it contains no personal information.</p>
 <h2>Links to other websites</h2>
-<p>We link to government portals, to our sister sites (${ext(NETWORK.akdet.url, 'akdet.com')} and ${ext(NETWORK.mvpchecker.url, 'mvpchecker.com')}) and to other sources. Their privacy policies apply once you leave this website.</p>
+<p>We link to government portals, to our technology partner ${ext(NETWORK.mvpchecker.url, 'MVPChecker')}, to ${ext(NETWORK.akdet.url, 'akdet.com')} for more calculators, and to other sources. Their privacy policies apply once you leave this website.</p>
 <h2>Sharing and retention</h2>
 <p>We do not sell personal data. Technical logs are kept by our hosting providers for a limited period for security and troubleshooting and are then deleted or anonymised. Advertising and analytics data are retained by Google according to its own policies.</p>
 <h2>Children</h2>

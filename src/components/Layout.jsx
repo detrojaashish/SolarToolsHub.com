@@ -135,16 +135,14 @@ export default function Layout({ d, lang, base, localized, states, children }) {
               <a href="/privacy-policy">{d.nav.privacy}</a>
               <a href="/terms">{d.nav.terms}</a>
               <a href="/disclaimer">{d.nav.disclaimer}</a>
-              <h2 className="mt">{u.moreFromUs}</h2>
-              <a href={NETWORK.mvpchecker.url} target="_blank" rel="noopener">{NETWORK.mvpchecker.name} <Icon name="ext" size={14} /></a>
-              <a href={NETWORK.akdet.url} target="_blank" rel="noopener">akdet.com <Icon name="ext" size={14} /></a>
             </div>
           </div>
           <NetworkStrip d={d} compact />
           <div className="f-bot">
             <span>© {year} SolarToolsHub.com · {d.site.rights}</span>{' '}
             <span>{madeFor}</span>{' '}
-            <span>{u.devBy} <a href={NETWORK.twocompo.url} target="_blank" rel="noopener">{NETWORK.twocompo.name}</a></span>
+            <span>{u.devBy} <a href={NETWORK.twocompo.url} target="_blank" rel="noopener">{NETWORK.twocompo.name}</a></span>{' '}
+            <span>{u.techPartner} <a href={NETWORK.mvpchecker.url} target="_blank" rel="noopener">{NETWORK.mvpchecker.name}</a></span>
           </div>
         </div>
       </footer>

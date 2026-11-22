@@ -180,7 +180,7 @@ export function Cta({ d, campaign = 'page' }) {
   return <Partner d={d} campaign={campaign} title={d.common.ctaTitle} text={d.common.ctaText} />;
 }
 
-/** Secondary block: non-solar calculators live on the sister site – links only. */
+/** Secondary block: "Need more calculators? Visit akdet.com" – links only (we build only solar tools here). */
 export function NetworkStrip({ d, compact }) {
   const u = ux(d);
   const a = NETWORK.akdet;

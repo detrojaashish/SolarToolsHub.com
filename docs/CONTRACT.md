@@ -4,9 +4,9 @@ Several agents edit this repo **at the same time**. Read this whole file before 
 
 ## 0. What the site is
 - SolarToolsHub.com: all-India solar calculators, subsidy and state guides, in en / hi / gu / mr. Static React "islands" site (Vite 5 + React 18 + custom prerender). 288 pre-rendered pages. Must rank top in Google India for solar searches and pass AdSense review.
-- **The site is 100% solar.** Non-solar calculators are never built here – we only *link* to the owner's other site akdet.com (`NETWORK.akdet` in `src/config.js`).
+- **The site is 100% solar.** Non-solar calculators are never built here – we only *link* to akdet.com (wording: "Need more calculators? Visit akdet.com" – never "our other website", never "non-solar", akdet also has solar tools) (`NETWORK.akdet` in `src/config.js`).
 - **Sales go through Avirat Energy Pvt. Ltd.** (installation partner, all-India installation and delivery). The public prefers to **call**, so every CTA is **call-first**: phone `+91 99797 45444` (`tel:` link) → WhatsApp → website link. All partner facts live in `PARTNER` in `src/config.js` (phone, WhatsApp, email, address, branches, logo `/partners/avirat-energy.png` 234×96 transparent PNG with dark-grey text – put it on a white/light chip). Never invent Avirat facts (no fake ratings, awards, review counts or "installed MW").
-- **No contact details of the site owner anywhere, no Play Store link.** Credits: "Developed by TWOCOMPO TECHNOLOGIES PRIVATE LIMITED" → https://twocompo.com, plus a link to https://mvpchecker.com (`NETWORK` in config).
+- **No contact details of the site owner anywhere, no Play Store link.** Credits: "Developed by TWOCOMPO TECHNOLOGIES PRIVATE LIMITED" → https://twocompo.com, and "Technology partner: MVPChecker" → https://mvpchecker.com (`NETWORK` in config).
 - Hard quality bars: Lighthouse mobile 100/100/100/100 (Perf, A11y, Best-Practices, SEO), CLS 0, no external requests on page load, WCAG AA contrast, every dropdown is the searchable `SearchSelect`.
 
 ## 1. File ownership (STRICT – never edit a file you do not own; put requests for other files in your final report)

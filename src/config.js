@@ -13,8 +13,6 @@ export const SITE = {
   googleVerification: '',
   developer: 'TWOCOMPO TECHNOLOGIES PRIVATE LIMITED',
   developerUrl: 'https://twocompo.com',
-  // Sister product shown in the footer
-  sister: { name: 'MVPChecker', url: 'https://mvpchecker.com' },
 };
 
 // Installation / lead partner. Every "Get quote" CTA points here.
@@ -43,7 +41,9 @@ export const PARTNER = {
   },
 };
 
-// Sister sites. We link out for NON-solar calculators instead of building them here (this site stays 100% solar).
+// External links. akdet.com: we only link out for more calculators ("Need more calculators? Visit akdet.com" – never "our other website",
+// never "non-solar": akdet also has solar tools);
+// this site stays 100% solar. MVPChecker: technology partner (footer credit line + About page).
 export const NETWORK = {
   akdet: {
     name: 'akdet',
@@ -59,7 +59,7 @@ export const NETWORK = {
       ['Salary Slip Generator', 'https://akdet.com/salary-slip-generator/'],
     ],
   },
-  mvpchecker: { name: 'MVPChecker', url: 'https://mvpchecker.com', line: 'Validate Smarter. Build Better.' },
+  mvpchecker: { name: 'MVPChecker', url: 'https://mvpchecker.com', role: 'Technology partner' },
   twocompo: { name: 'TWOCOMPO TECHNOLOGIES PRIVATE LIMITED', url: 'https://twocompo.com' },
 };
 
