@@ -1,7 +1,7 @@
 import { renderToString } from 'react-dom/server';
 import Layout from './components/Layout.jsx';
 import { DICTS, LANGS, DEFAULT_LANG, lp, getDict } from './i18n/index.js';
-import { SITE, PARTNER } from './config.js';
+import { SITE, PARTNER, NETWORK } from './config.js';
 import { STATES } from './data/states.js';
 import { POSTS } from './data/posts.js';
 import { STATES_LITE } from './data/lite.js';
@@ -48,7 +48,10 @@ const ORG = {
   name: SITE.name,
   url: SITE.url + '/',
   logo: { '@type': 'ImageObject', url: SITE.url + '/icons/icon-512.png', width: 512, height: 512 },
+  // same roles as the visible footer credit: "A project by MVPChecker · Developed by TWOCOMPO"
+  parentOrganization: { '@type': 'Organization', name: NETWORK.mvpchecker.name, url: NETWORK.mvpchecker.url },
 };
+const CREATOR = { '@type': 'Organization', name: NETWORK.twocompo.name, url: NETWORK.twocompo.url };
 const AUTHOR = { '@type': 'Organization', name: 'SolarToolsHub Team', url: SITE.url + '/about' };
 
 const crumbs = (items) => ({
@@ -87,7 +90,7 @@ function build() {
       ...common, base: '/', path: L('/'), title: d.home.title, description: d.home.description, ogTitle: d.home.h1, priority: 1, changefreq: 'weekly',
       jsonLd: [
         ORG,
-        { '@type': 'WebSite', '@id': WEB_ID, url: SITE.url + '/', name: SITE.name, description: d.site.defaultDescription, inLanguage: d.htmlLang, publisher: { '@id': ORG_ID } },
+        { '@type': 'WebSite', '@id': WEB_ID, url: SITE.url + '/', name: SITE.name, description: d.site.defaultDescription, inLanguage: d.htmlLang, publisher: { '@id': ORG_ID }, creator: CREATOR },
         faqLd(d.home.faqs),
       ],
       render: () => <><Home d={d} lang={lang} />{more}</>,

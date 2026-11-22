@@ -111,9 +111,12 @@ export function BlogPost({ d, p }) {
 // ─── Static (English) pages required for trust & AdSense ─────────────
 const host = SITE.url.replace('https://', '');
 const DEV = NETWORK.twocompo;
+const MVP = NETWORK.mvpchecker; // "A project by MVPChecker"
 const UPDATED = '22 November 2026';
 const ext = (href, text, nofollow = false) => `<a href="${href}" target="_blank" rel="noopener${nofollow ? ' nofollow' : ''}">${text}</a>`;
 const devLink = ext(DEV.url, DEV.name);
+const byLine = 'a project by ' + ext(MVP.url, MVP.name) + ', developed and maintained by ' + devLink;
+const devSites = ext(DEV.url, 'twocompo.com') + ' or ' + ext(MVP.url, 'mvpchecker.com');
 const partnerSite = (c) => ext(partnerLink(c), 'aviratenergy.com');
 
 /** Full partner contact block – call first, then WhatsApp, email, website, address */
@@ -138,7 +141,7 @@ export const STATIC = {
 <h2>How we calculate</h2>
 <p>Every number on the site comes from one shared set of formulas, so a price on a guide page matches what the calculator shows.</p>
 <ul><li><strong>Subsidy</strong> – the central financial assistance slabs published by the Ministry of New and Renewable Energy (MNRE) for PM Surya Ghar: ₹30,000 per kW for the first 2 kW and ₹18,000 for the third kW, with 10% more in special-category states. State top-ups are taken from state government and DISCOM notifications; each state page says how firmly a figure is confirmed.</li><li><strong>Prices</strong> – typical installed prices for systems with DCR panels, including GST, reviewed against published installer prices and quotations. They are ranges, not offers.</li><li><strong>Generation</strong> – average units per kW per day for each state, based on solar irradiance data and typical system losses.</li><li><strong>Savings and payback</strong> – your state's average residential tariff, a 3% yearly tariff increase, 0.5% yearly panel degradation and 1% yearly maintenance, unless you change them.</li></ul>
-<p>Tariffs, subsidies and prices change. We review the data regularly – this page and the data behind the calculators were last reviewed on ${UPDATED} – but you should always confirm final figures with your DISCOM and installer. If you spot a figure that is out of date, please tell us through the developer's website below.</p>
+<p>Tariffs, subsidies and prices change. We review the data regularly – this page and the data behind the calculators were last reviewed on ${UPDATED} – but you should always confirm final figures with your DISCOM and installer. If you spot a figure that is out of date, please tell us through the websites listed below.</p>
 <h2>How the site is funded</h2>
 <p>The calculators are free and need no login. The site is paid for in two ways, and we want you to know both:</p>
 <ul><li><strong>Advertising.</strong> Pages may show advertisements, clearly labelled “Advertisement”, served by Google AdSense. Advertisers have no say in our content.</li><li><strong>Partner referrals.</strong> When you call, message or visit our installation partner from this site, we may receive a referral benefit. This does not change the price you pay, and you are free to choose any registered installer.</li></ul>
@@ -146,26 +149,24 @@ export const STATIC = {
 <p>SolarToolsHub does not sell or install solar systems. For site surveys, quotations, subsidy paperwork and installation we refer readers to ${PARTNER.legalName}, which supplies and installs rooftop solar for homes and businesses across India.</p>
 ${partnerBlock('about')}
 <h2>Who builds and maintains SolarToolsHub</h2>
-<p>SolarToolsHub is developed and maintained by ${devLink}. For anything about the website itself – corrections, technical problems, advertising or partnerships – please contact the developer through ${ext(DEV.url, 'twocompo.com')}.</p>
-<h2>Technology partner</h2>
-<p>Our technology partner is ${ext(NETWORK.mvpchecker.url, NETWORK.mvpchecker.name)} (mvpchecker.com).</p>
+<p>SolarToolsHub is ${byLine}. For anything about the website itself – corrections, technical problems, advertising or partnerships – please contact the team through ${devSites}.</p>
 <h2>Other calculators</h2>
 <p>Need more calculators – EMI, SIP, FD, PPF, income tax, GST and many others? Visit ${ext(NETWORK.akdet.all, 'akdet.com')}.</p>`,
   },
   contact: {
     title: 'Contact Us – SolarToolsHub & Avirat Energy',
-    description: `Solar quote or installation: call Avirat Energy on ${PARTNER.phone}. Website, corrections and advertising: contact the developer, TWOCOMPO Technologies.`,
+    description: `Solar quote or installation: call Avirat Energy on ${PARTNER.phone}. Website, corrections and ads: contact the team via twocompo.com or mvpchecker.com.`,
     h1: 'Contact us',
     html: `<p>Thank you for using SolarToolsHub. Please pick the right contact below so that your message reaches the people who can help.</p>
 <h2>Solar quotes, site surveys and installation</h2>
 <p>SolarToolsHub is an information website – we do not install solar ourselves. All solar enquiries (quotation, site survey, PM Surya Ghar subsidy paperwork, installation, service) are handled by our installation partner <strong>${PARTNER.legalName}</strong>, which serves customers across India. Calling is the fastest way to get an answer.</p>
 ${partnerBlock('contact')}
 <h2>Website, corrections and technical issues</h2>
-<p>SolarToolsHub is developed and maintained by ${devLink}. If a calculator misbehaves, a tariff or subsidy figure looks out of date, or you have a suggestion for a new tool, please write to the developer through ${ext(DEV.url, 'twocompo.com')} and mention “SolarToolsHub” and the page address.</p>
+<p>SolarToolsHub is ${byLine}. If a calculator misbehaves, a tariff or subsidy figure looks out of date, or you have a suggestion for a new tool, please write to the team through ${devSites} and mention “SolarToolsHub” and the page address.</p>
 <h2>Advertising and partnerships</h2>
-<p>For advertising, sponsorship or data partnerships, see <a href="/advertise">Advertise with us</a> and contact the developer through ${ext(DEV.url, 'twocompo.com')}.</p>
+<p>For advertising, sponsorship or data partnerships, see <a href="/advertise">Advertise with us</a> and contact the team through ${devSites}.</p>
 <h2>Privacy requests</h2>
-<p>Our calculators do not collect personal data. If you still have a question or request about your data, see the <a href="/privacy-policy">Privacy Policy</a> and reach the developer through ${ext(DEV.url, 'twocompo.com')}.</p>
+<p>Our calculators do not collect personal data. If you still have a question or request about your data, see the <a href="/privacy-policy">Privacy Policy</a> and reach the team through ${devSites}.</p>
 <h2>Please note</h2>
 <ul><li>We are <strong>not a government office</strong> and cannot check, approve or speed up a subsidy application. For that, log in at ${ext('https://pmsuryaghar.gov.in', 'pmsuryaghar.gov.in', true)}, call the scheme helpline 15555 or contact your DISCOM.</li><li>We never ask for a registration fee, OTP or bank details.</li><li>Need more calculators? Visit ${ext(NETWORK.akdet.all, 'akdet.com')}.</li></ul>`,
   },
@@ -183,7 +184,7 @@ ${partnerBlock('contact')}
 <h2>Our advertising rules</h2>
 <ul><li>Advertisements are always labelled and kept separate from our content.</li><li>Advertisers and sponsors do not influence calculator results, price ranges or subsidy information.</li><li>We do not accept advertisements that imitate government portals, promise guaranteed subsidies or ask users for registration fees.</li><li>Installation enquiries from the site go to our installation partner, ${PARTNER.legalName}; this relationship is disclosed on every page.</li></ul>
 <h2>Get in touch</h2>
-<p>Advertising on SolarToolsHub is handled by the company that develops and maintains the site, ${devLink}. Please contact them through ${ext(DEV.url, 'twocompo.com')} with your brand, the pages or states you are interested in and your timeline.</p>
+<p>Advertising on SolarToolsHub is handled by the team behind the site – ${byLine}. Please contact them through ${devSites} with your brand, the pages or states you are interested in and your timeline.</p>
 <p>Looking for a solar installer instead? Call ${PARTNER.legalName} on <a href="tel:${PARTNER.tel}">${PARTNER.phone}</a> or see <a href="/get-solar-quote">Get a free solar quote</a>.</p>`,
   },
   'privacy-policy': {
@@ -191,7 +192,7 @@ ${partnerBlock('contact')}
     description: 'How SolarToolsHub.com handles your data: calculators that run in your browser, Google AdSense advertising cookies, analytics, opt-outs and your rights.',
     h1: 'Privacy Policy',
     html: `<p><em>Last updated: ${UPDATED}</em></p>
-<p>This Privacy Policy explains what information is processed when you use ${host} (“SolarToolsHub”, “the website”, “we”). The website is developed and maintained by ${devLink}. In short: our calculators work in your browser and we do not ask you to create an account or give us personal details.</p>
+<p>This Privacy Policy explains what information is processed when you use ${host} (“SolarToolsHub”, “the website”, “we”). The website is ${byLine}. In short: our calculators work in your browser and we do not ask you to create an account or give us personal details.</p>
 <h2>Information you enter into calculators</h2>
 <p>The numbers and text you type into a calculator – bill amount, system size, a customer name on a proposal and so on – are processed <strong>in your browser only</strong>. They are not sent to or stored on our servers. PDF reports are generated on your own device. We do not use first-party cookies or browser storage to remember what you entered.</p>
 <h2>Information collected automatically</h2>
@@ -207,13 +208,13 @@ ${partnerBlock('contact')}
 <h2>When you contact our installation partner</h2>
 <p>Buttons such as “Call”, “WhatsApp” and “Visit website” connect you directly to ${PARTNER.legalName}. Tapping them opens your phone dialler, WhatsApp or their website; SolarToolsHub does not receive your phone number or your message. Whatever you share with ${PARTNER.name} is handled under their own privacy policy. Links to their website carry a campaign tag that tells them the visit came from SolarToolsHub – it contains no personal information.</p>
 <h2>Links to other websites</h2>
-<p>We link to government portals, to our technology partner ${ext(NETWORK.mvpchecker.url, 'MVPChecker')}, to ${ext(NETWORK.akdet.url, 'akdet.com')} for more calculators, and to other sources. Their privacy policies apply once you leave this website.</p>
+<p>We link to government portals, to ${ext(MVP.url, 'mvpchecker.com')} and ${ext(DEV.url, 'twocompo.com')}, to ${ext(NETWORK.akdet.url, 'akdet.com')} for more calculators, and to other sources. Their privacy policies apply once you leave this website.</p>
 <h2>Sharing and retention</h2>
 <p>We do not sell personal data. Technical logs are kept by our hosting providers for a limited period for security and troubleshooting and are then deleted or anonymised. Advertising and analytics data are retained by Google according to its own policies.</p>
 <h2>Children</h2>
 <p>The website is meant for adults who make decisions about an electricity connection. We do not knowingly collect personal data from children under 18.</p>
 <h2>Your rights under Indian law</h2>
-<p>Under the Digital Personal Data Protection Act, 2023 and the rules made under it, you have the right to obtain information about personal data being processed, to have it corrected or erased, to withdraw consent, to nominate another person to exercise your rights and to have a grievance addressed. Because our tools do not collect personal data, in most cases we hold none about you. To make a request or raise a grievance, contact the developer through ${ext(DEV.url, 'twocompo.com')} and mention “SolarToolsHub privacy”. If you are not satisfied with the response, you may approach the Data Protection Board of India.</p>
+<p>Under the Digital Personal Data Protection Act, 2023 and the rules made under it, you have the right to obtain information about personal data being processed, to have it corrected or erased, to withdraw consent, to nominate another person to exercise your rights and to have a grievance addressed. Because our tools do not collect personal data, in most cases we hold none about you. To make a request or raise a grievance, contact the team through ${devSites} and mention “SolarToolsHub privacy”. If you are not satisfied with the response, you may approach the Data Protection Board of India.</p>
 <h2>Changes to this policy</h2>
 <p>We may update this policy when our practices or the law change. The current version is always on this page, with the date of the last update at the top.</p>`,
   },
@@ -238,11 +239,11 @@ ${partnerBlock('contact')}
 <h2>7. Intellectual property</h2>
 <p>The design, text, calculators and code of the website belong to its owner and developer. Names and logos of third parties, including ${PARTNER.name}, belong to their respective owners.</p>
 <h2>8. Limitation of liability</h2>
-<p>The website is provided “as is”, without warranties of any kind. To the extent permitted by law, SolarToolsHub and ${DEV.name} are not liable for any loss or damage arising from the use of, or reliance on, the website, its calculators or its content.</p>
+<p>The website is provided “as is”, without warranties of any kind. To the extent permitted by law, SolarToolsHub, ${DEV.name} and ${MVP.name} are not liable for any loss or damage arising from the use of, or reliance on, the website, its calculators or its content.</p>
 <h2>9. Changes and governing law</h2>
 <p>We may change the website or these terms at any time; the date at the top shows the latest version. These terms are governed by the laws of India, and the courts of competent jurisdiction in India will have jurisdiction over any dispute.</p>
 <h2>10. Contact</h2>
-<p>Questions about these terms can be sent to the developer through ${ext(DEV.url, 'twocompo.com')}. See also our <a href="/privacy-policy">Privacy Policy</a> and <a href="/disclaimer">Disclaimer</a>.</p>`,
+<p>Questions about these terms can be sent to the team through ${devSites}. See also our <a href="/privacy-policy">Privacy Policy</a> and <a href="/disclaimer">Disclaimer</a>.</p>`,
   },
   disclaimer: {
     title: 'Disclaimer – SolarToolsHub Is Not a Government Website',
@@ -262,7 +263,7 @@ ${partnerBlock('contact')}
 <p>We link to official portals and other sources to help you verify information. We are not responsible for the content of external websites.</p>
 <h2>No liability</h2>
 <p>We work to keep the information accurate and current, but we make no warranty that it is complete or error-free, and we accept no liability for decisions made on the basis of this website. See the full <a href="/terms">Terms &amp; Conditions</a>.</p>
-<p>The website is developed and maintained by ${devLink}. To report an error, contact the developer through ${ext(DEV.url, 'twocompo.com')}.</p>`,
+<p>The website is ${byLine}. To report an error, contact the team through ${devSites}.</p>`,
   },
 };
 

@@ -9,6 +9,7 @@ export default function Layout({ d, lang, base, localized, states, children }) {
   const L = (p) => lp(p, lang);
   const t = d.tools;
   const u = ux(d);
+  const [pb1, pb2 = ''] = u.projectBy.split('{x}');
   const year = new Date().getFullYear();
   const stateName = Object.fromEntries((states || []).map((s) => [s.slug, s.name]));
   const tel = 'tel:' + PARTNER.tel;
@@ -141,8 +142,8 @@ export default function Layout({ d, lang, base, localized, states, children }) {
           <div className="f-bot">
             <span>© {year} SolarToolsHub.com · {d.site.rights}</span>{' '}
             <span>{madeFor}</span>{' '}
-            <span>{u.devBy} <a href={NETWORK.twocompo.url} target="_blank" rel="noopener">{NETWORK.twocompo.name}</a></span>{' '}
-            <span>{u.techPartner} <a href={NETWORK.mvpchecker.url} target="_blank" rel="noopener">{NETWORK.mvpchecker.name}</a></span>
+            <span>{pb1}<a href={NETWORK.mvpchecker.url} target="_blank" rel="noopener">{NETWORK.mvpchecker.name}</a>{pb2}</span>{' '}
+            <span>{u.devBy} <a href={NETWORK.twocompo.url} target="_blank" rel="noopener">{NETWORK.twocompo.name}</a></span>
           </div>
         </div>
       </footer>

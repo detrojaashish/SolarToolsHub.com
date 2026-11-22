@@ -43,7 +43,7 @@ export const PARTNER = {
 
 // External links. akdet.com: we only link out for more calculators ("Need more calculators? Visit akdet.com" – never "our other website",
 // never "non-solar": akdet also has solar tools);
-// this site stays 100% solar. MVPChecker: technology partner (footer credit line + About page).
+// this site stays 100% solar. Credits (footer, About, legal pages, JSON-LD): "A project by MVPChecker · Developed by TWOCOMPO TECHNOLOGIES PRIVATE LIMITED".
 export const NETWORK = {
   akdet: {
     name: 'akdet',
@@ -59,8 +59,8 @@ export const NETWORK = {
       ['Salary Slip Generator', 'https://akdet.com/salary-slip-generator/'],
     ],
   },
-  mvpchecker: { name: 'MVPChecker', url: 'https://mvpchecker.com', role: 'Technology partner' },
-  twocompo: { name: 'TWOCOMPO TECHNOLOGIES PRIVATE LIMITED', url: 'https://twocompo.com' },
+  mvpchecker: { name: 'MVPChecker', url: 'https://mvpchecker.com', role: 'A project by' },
+  twocompo: { name: 'TWOCOMPO TECHNOLOGIES PRIVATE LIMITED', url: 'https://twocompo.com', role: 'Developed by' },
 };
 
 export const partnerLink = (campaign = 'cta') =>

@@ -38,8 +38,8 @@ export default {
       nonSolarTitle: 'Need more calculators? Visit akdet.com',
       nonSolarText: 'EMI, SIP, FD, PPF, income-tax, GST, salary and many more:',
       allCalcs: 'All calculators on akdet.com',
+      projectBy: 'A project by {x}', // {x} = MVPChecker link; word order differs per language
       devBy: 'Developed by',
-      techPartner: 'Technology partner:',
       readTitle: 'How to read your result',
       read: [
         { t: 'What you pay', d: 'Net cost is the system price minus the central and state subsidy.' },
@@ -93,8 +93,8 @@ export default {
       nonSolarTitle: 'इनके अलावा और कैलकुलेटर चाहिए? akdet.com पर जाएं',
       nonSolarText: 'EMI, SIP, FD, PPF, इनकम टैक्स, GST, सैलरी और कई दूसरे कैलकुलेटर:',
       allCalcs: 'akdet.com पर सभी कैलकुलेटर',
+      projectBy: '{x} का प्रोजेक्ट',
       devBy: 'डेवलपर:',
-      techPartner: 'टेक्नोलॉजी पार्टनर:',
       readTitle: 'अपना रिज़ल्ट कैसे समझें',
       read: [
         { t: 'आपको कितना देना है', d: 'नेट कॉस्ट यानी सिस्टम की कीमत में से केंद्र और राज्य की सब्सिडी घटाकर बची रकम।' },
@@ -148,8 +148,8 @@ export default {
       nonSolarTitle: 'આ સિવાયના બીજા કેલ્ક્યુલેટર જોઈએ છે? akdet.com ની મુલાકાત લો',
       nonSolarText: 'EMI, SIP, FD, PPF, ઇન્કમ ટેક્સ, GST, સેલેરી અને બીજા ઘણા કેલ્ક્યુલેટર:',
       allCalcs: 'akdet.com પર બધા કેલ્ક્યુલેટર',
+      projectBy: '{x} નો પ્રોજેક્ટ',
       devBy: 'ડેવલપર:',
-      techPartner: 'ટેક્નોલોજી પાર્ટનર:',
       readTitle: 'તમારું પરિણામ કેવી રીતે સમજવું',
       read: [
         { t: 'તમારે કેટલું ચૂકવવાનું', d: 'નેટ કોસ્ટ એટલે સિસ્ટમની કિંમતમાંથી કેન્દ્ર અને રાજ્યની સબસિડી બાદ કર્યા પછીની રકમ.' },
@@ -203,8 +203,8 @@ export default {
       nonSolarTitle: 'यांच्याशिवाय इतर कॅल्क्युलेटर हवे आहेत? akdet.com ला भेट द्या',
       nonSolarText: 'EMI, SIP, FD, PPF, इन्कम टॅक्स, GST, पगार आणि इतर अनेक कॅल्क्युलेटर:',
       allCalcs: 'akdet.com वर सर्व कॅल्क्युलेटर',
+      projectBy: '{x} चा प्रकल्प',
       devBy: 'डेव्हलपर:',
-      techPartner: 'टेक्नॉलॉजी पार्टनर:',
       readTitle: 'तुमचा निकाल कसा समजून घ्यावा',
       read: [
         { t: 'तुम्हाला किती भरायचे', d: 'नेट कॉस्ट म्हणजे सिस्टमच्या किमतीतून केंद्र आणि राज्याची सबसिडी वजा केल्यावर उरलेली रक्कम.' },

@@ -44,4 +44,4 @@ For the real domain, create a named tunnel in Cloudflare Zero Trust and replace 
 - Text and translations: `src/i18n/{en,hi,gu,mr}.js`. To add a language, drop in another file with the same shape and add its tagline to `scripts/og-images.mjs`.
 - Blog: `src/data/posts.js`.
 
-Developed by TWOCOMPO TECHNOLOGIES PRIVATE LIMITED.
+A project by [MVPChecker](https://mvpchecker.com) · Developed by [TWOCOMPO TECHNOLOGIES PRIVATE LIMITED](https://twocompo.com).
