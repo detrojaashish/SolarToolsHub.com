@@ -1,0 +1,31 @@
+{
+  "name": "solartoolshub",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "SolarToolsHub.com – free Indian rooftop solar calculators, subsidy & state guides. Static React (islands) build.",
+  "scripts": {
+    "build:client": "vite build",
+    "build:server": "vite build --ssr src/entry-server.jsx",
+    "prerender": "node scripts/prerender.mjs",
+    "og": "node scripts/og-images.mjs",
+    "build": "npm run build:client && npm run build:server && npm run prerender && npm run og",
+    "preview": "node scripts/serve.mjs",
+    "dev": "npm run build && npm run preview",
+    "test": "node scripts/test-calc.mjs",
+    "coverage": "c8 --include \"src/lib/**\" --include \"src/data/**\" --reporter text --reporter text-summary --check-coverage --lines 95 --statements 95 --functions 95 --branches 95 node scripts/test-calc.mjs"
+  },
+  "dependencies": {
+    "jspdf": "^2.5.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.1",
+    "c8": "^8.0.1",
+    "lighthouse": "^11.7.1",
+    "puppeteer-core": "^21.11.0",
+    "sharp": "^0.32.6",
+    "vite": "5.4.8"
+  }
+}

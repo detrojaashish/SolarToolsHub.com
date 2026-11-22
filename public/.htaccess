@@ -1,0 +1,63 @@
+# Apache / cPanel / shared hosting config for the static build
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+# canonical URLs have NO trailing slash (/solar-calculator), so Apache must not add one
+DirectorySlash Off
+ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+
+# 1. Force HTTPS + non-www (one hop)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://solartoolshub.com%{REQUEST_URI} [L,R=301]
+
+# 2. /index.html and /foo/index.html are never linked – send them to the clean URL
+RewriteCond %{THE_REQUEST} \s/+(hi|gu|mr)/index\.html[\s?] [NC]
+RewriteRule ^ /%1/ [L,R=301]
+RewriteCond %{THE_REQUEST} \s/+(?:(.*)/)?index\.html[\s?] [NC]
+RewriteRule ^ /%1 [L,R=301]
+
+# 3. Language home pages keep their slash: /hi -> /hi/
+RewriteRule ^(hi|gu|mr)$ /$1/ [L,R=301]
+
+# 4. Every other URL loses a trailing slash: /solar-calculator/ -> /solar-calculator
+RewriteCond %{REQUEST_URI} !^/(hi|gu|mr)/$
+RewriteRule ^(.+)/$ /$1 [L,R=301]
+
+# 5. Serve /foo from /foo/index.html without redirecting
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.+[^/])$ $1/index.html [L]
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript text/javascript application/json image/svg+xml application/manifest+json
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType font/woff2 .woff2
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  <FilesMatch "\.(js|css|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(jpg|jpeg|png|webp|svg|ico|webmanifest)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=600, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "^(sitemap\.xml|robots\.txt|ads\.txt)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+  # the error page must never be indexed, whatever URL it is served for
+  <Files "404.html">
+    Header set X-Robots-Tag "noindex"
+  </Files>
+</IfModule>
